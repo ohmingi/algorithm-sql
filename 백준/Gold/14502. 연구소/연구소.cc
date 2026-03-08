@@ -58,17 +58,25 @@ void cal(int x, int y, int (&graph)[8][8]){
     mxcnt = max(mxcnt,cnt);
 }
 
-void back(int X, int Y, int (&graph)[8][8], int cnt){
+void back(int X, int Y, int (&graph)[8][8], int x, int y, int cnt){
     if(cnt == 3){
         cal(X,Y,graph);
         return;
     }
 
-    for(int i = 0; i < X; i++){
-        for(int t = 0; t < Y; t++){
+    for(int i = x; i < X; i++){
+        if(i == x) {
+            y = y;
+        }
+        else{
+            y = 0;
+        
+        }
+
+        for(int t = y; t < Y; t++){
             if(graph[i][t] == 0){
                 graph[i][t] = 1;
-                back(X,Y,graph,cnt+1);
+                back(X,Y,graph,i,t,cnt+1);
                 graph[i][t] = 0;
             }
         }
@@ -90,7 +98,7 @@ int main(){
         }
     }
 
-    back(x,y,graph,0);
+    back(x,y,graph,0,0,0);
 
     cout << mxcnt;
 }
