@@ -1,11 +1,16 @@
 #include <iostream>
+
 using namespace std;
+
 int main(){
-    int a, b;
-    cin>>a>>b;
-    cout<<a+b<<endl;
-    cout<<a-b<<endl;
-    cout<<a*b<<endl;
-    cout<<a/b<<endl;
-    cout<<a%b<<endl;    
+  int A;
+  int B;
+
+  cin >> A >> B;
+
+  cout << A+B << "\n";
+  cout << A-B << "\n";
+  cout << A*B << "\n";
+  cout << A/B << "\n";
+  cout << A%B;
 }
